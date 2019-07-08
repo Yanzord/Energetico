@@ -1,6 +1,6 @@
 package br.com.aceleradora.calculaimposto.classes;
 
-public class calculaImposto {
+public class CalculaImposto {
     private int total;
 
 }

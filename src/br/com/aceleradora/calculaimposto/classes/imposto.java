@@ -1,6 +1,6 @@
 package br.com.aceleradora.calculaimposto.classes;
 
-public class imposto {
+public class Imposto {
     private Double icms = 0.18;
     private Double ipi = 0.04;
     private Double pis = 0.186;

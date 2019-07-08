@@ -1,6 +1,6 @@
 package br.com.aceleradora.calculaimposto.classes;
 
-public class notaFiscal {
+public class Notafiscal {
     private int idNota;
     private String nomeCliente;
     private int quantEnergetico;
