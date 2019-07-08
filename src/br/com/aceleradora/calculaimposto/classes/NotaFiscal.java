@@ -9,31 +9,25 @@ public class NotaFiscal {
     private Double pis;
     private Double cofins;
     private Double totalNota;
+    CalculaImposto calculaImposto;
 
-    public Nota (String nomeCliente, int qtdEnergetico) {
+    public NotaFiscal (String nomeCliente, int qtdEnergetico){
+        this.calculaImposto = new CalculaImposto();
         this.nomeCliente = nomeCliente;
         this.qtdEnergetico = qtdEnergetico;
-        this.icms = calculaIcms(qtdEnergetico);
-        this.ipi = calculaIpi(qtdEnergetico);
-        this.pis = calculaPis(qtdEnergetico);
-        this.cofins = calculaCofins(qtdEnergetico);
-        this totalNota = calculaTotalNota();
+        this.icms = calculaImposto.calculaIcms(qtdEnergetico);
+        this.ipi = calculaImposto.calculaIpi(qtdEnergetico);
+        this.pis = calculaImposto.calculaPis(qtdEnergetico);
+        this.cofins = calculaImposto.calculaCofins(qtdEnergetico);
+        this.totalNota = calculaImposto.calculaTotalNota(qtdEnergetico);
     }
 
     public String getNomeCliente() {
         return nomeCliente;
     }
 
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
-    }
-
     public int getQtdEnergetico() {
         return qtdEnergetico;
-    }
-
-    public void setQtdEnergetico(int qtdEnergetico) {
-        this.qtdEnergetico = qtdEnergetico;
     }
 
     public Double getValorEnergetico() {
@@ -59,4 +53,6 @@ public class NotaFiscal {
     public Double getTotalNota() {
         return totalNota;
     }
+
+    // calcularTotalNota
 }
