@@ -1,17 +1,14 @@
 package br.com.aceleradora.calculaimposto.app;
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.List;
 
 import br.com.aceleradora.calculaimposto.classes.NotaFiscal;
-import br.com.aceleradora.calculaimposto.classes.CalculaImposto;
+import br.com.aceleradora.calculaimposto.classes.Relatorios;
 
 public class AppPrincipal {
 
     public static void main(String[] args) {
-        List<NotaFiscal> notas = new ArrayList<>();
         Scanner teclado = new Scanner(System.in);
-        CalculaImposto calculaImposto = new CalculaImposto();
+        Relatorios relatorios = new Relatorios();
         int opcaoInserida = 1, qtdEnergetico;
         String nomeCliente;
 
@@ -38,9 +35,9 @@ public class AppPrincipal {
                     qtdEnergetico = teclado.nextInt();
 
                     NotaFiscal nota = new NotaFiscal(nomeCliente, qtdEnergetico);
-                    notas.add(nota);
+                    relatorios.gerarRelatorio(nota);
 
-                   limparTela();
+                    limparTela();
 
                     System.out.println("Nota adicionada com sucesso!");
 
@@ -48,9 +45,9 @@ public class AppPrincipal {
                 }
                 case 2: {
 
-                   limparTela();
+                    limparTela();
 
-                    mostrarRelatorio();
+                    relatorios.mostrarRelatorio();
 
                     break;
                 }
