@@ -15,10 +15,10 @@ public class NotaFiscal {
         this.calculaImposto = new CalculaImposto();
         this.nomeCliente = nomeCliente;
         this.qtdEnergetico = qtdEnergetico;
-        this.icms = calculaImposto.calcularIcms(qtdEnergetico);
-        this.ipi = calculaImposto.calcularIpi(qtdEnergetico);
-        this.pis = calculaImposto.calcularPis(qtdEnergetico);
-        this.cofins = calculaImposto.calcularCofins(qtdEnergetico);
+        this.icms = calculaImposto.calcularIcms(qtdEnergetico, this.valorEnergetico);
+        this.ipi = calculaImposto.calcularIpi(qtdEnergetico, this.valorEnergetico);
+        this.pis = calculaImposto.calcularPis(qtdEnergetico, this.valorEnergetico);
+        this.cofins = calculaImposto.calcularCofins(qtdEnergetico, this.valorEnergetico);
         this.totalNota = calcularTotalNota(qtdEnergetico);
     }
 
