@@ -6,22 +6,6 @@ public class CalculaImposto {
     private Double pis = 0.0186;
     private Double cofins = 0.0854;
 
-    public Double getIcms() {
-        return icms;
-    }
-
-    public Double getIpi() {
-        return ipi;
-    }
-
-    public Double getPis() {
-        return pis;
-    }
-
-    public Double getCofins() {
-        return cofins;
-    }
-
     public Double calcularIcms(int qtdEnergetico, double valorEnergetico){
         return (qtdEnergetico * valorEnergetico) * this.icms;
     }
