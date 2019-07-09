@@ -5,7 +5,6 @@ public class CalculaImposto {
     private Double ipi = 0.04;
     private Double pis = 0.0186;
     private Double cofins = 0.0854;
-    NotaFiscal nota;
 
     public Double getIcms() {
         return icms;
@@ -23,24 +22,19 @@ public class CalculaImposto {
         return cofins;
     }
 
-    public Double calculaIcms(int qtdEnergetico){
+    public Double calcularIcms(int qtdEnergetico){
         return qtdEnergetico * this.icms;
     }
 
-    public Double calculaIpi(int qtdEnergetico){
+    public Double calcularIpi(int qtdEnergetico){
         return qtdEnergetico * this.ipi;
     }
 
-    public Double calculaPis(int qtdEnergetico){
+    public Double calcularPis(int qtdEnergetico){
         return qtdEnergetico * this.pis;
     }
 
-    public Double calculaCofins(int qtdEnergetico){
+    public Double calcularCofins(int qtdEnergetico){
         return qtdEnergetico * this.cofins;
-    }
-
-    public Double calculaTotalNota(int qtdEnergetico) {
-        this.nota = new NotaFiscal();
-        return qtdEnergetico * nota.getValorEnergetico() + (nota.getIcms() + nota.getIpi() + nota.getPis() + nota.getCofins());
     }
 }
