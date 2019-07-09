@@ -22,19 +22,19 @@ public class CalculaImposto {
         return cofins;
     }
 
-    public Double calcularIcms(int qtdEnergetico){
-        return qtdEnergetico * this.icms;
+    public Double calcularIcms(int qtdEnergetico, double valorEnergetico){
+        return (qtdEnergetico * valorEnergetico) * this.icms;
     }
 
-    public Double calcularIpi(int qtdEnergetico){
-        return qtdEnergetico * this.ipi;
+    public Double calcularIpi(int qtdEnergetico, double valorEnergetico){
+        return (qtdEnergetico * valorEnergetico) * this.ipi;
     }
 
-    public Double calcularPis(int qtdEnergetico){
-        return qtdEnergetico * this.pis;
+    public Double calcularPis(int qtdEnergetico, double valorEnergetico){
+        return (qtdEnergetico * valorEnergetico) * this.pis;
     }
 
-    public Double calcularCofins(int qtdEnergetico){
-        return qtdEnergetico * this.cofins;
+    public Double calcularCofins(int qtdEnergetico, double valorEnergetico){
+        return (qtdEnergetico * valorEnergetico) * this.cofins;
     }
 }
