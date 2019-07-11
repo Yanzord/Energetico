@@ -6,19 +6,19 @@ public class CalculaImposto {
     private Double pis = 0.0186;
     private Double cofins = 0.0854;
 
-    public Double calcularIcms(int qtdEnergetico, double valorEnergetico){
-        return (qtdEnergetico * valorEnergetico) * this.icms;
+    public Double calcularIcms(Double totalNotaSemImposto){
+        return totalNotaSemImposto * this.icms;
     }
 
-    public Double calcularIpi(int qtdEnergetico, double valorEnergetico){
-        return (qtdEnergetico * valorEnergetico) * this.ipi;
+    public Double calcularIpi(Double totalNotaSemImposto){
+        return totalNotaSemImposto * this.ipi;
     }
 
-    public Double calcularPis(int qtdEnergetico, double valorEnergetico){
-        return (qtdEnergetico * valorEnergetico) * this.pis;
+    public Double calcularPis(Double totalNotaSemImposto){
+        return totalNotaSemImposto * this.pis;
     }
 
-    public Double calcularCofins(int qtdEnergetico, double valorEnergetico){
-        return (qtdEnergetico * valorEnergetico) * this.cofins;
+    public Double calcularCofins(Double totalNotaSemImposto){
+        return totalNotaSemImposto * this.cofins;
     }
 }
