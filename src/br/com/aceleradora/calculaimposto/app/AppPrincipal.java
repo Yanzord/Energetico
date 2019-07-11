@@ -1,5 +1,4 @@
 package br.com.aceleradora.calculaimposto.app;
-import java.io.IOException;
 import java.util.Scanner;
 
 import br.com.aceleradora.calculaimposto.classes.NotaFiscal;
@@ -7,7 +6,7 @@ import br.com.aceleradora.calculaimposto.classes.Relatorios;
 
 public class AppPrincipal {
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         Relatorios relatorios = new Relatorios();
         int qtdEnergetico, opcaoInserida = 1;
