@@ -19,7 +19,12 @@ public class NotaFiscal {
         this.nomeCliente = nomeCliente;
         this.qtdEnergetico = qtdEnergetico;
 
-        calcularValoresNota();
+        if (this.qtdEnergetico >= 400){
+            this.descontoNota = calcularDesconto();
+            calcularValoresNota();
+        }else {
+            calcularValoresNota();
+        }
     }
 
     public String getNomeCliente() {
@@ -55,22 +60,12 @@ public class NotaFiscal {
     }
 
     public void calcularValoresNota(){
-        if (this.qtdEnergetico >= 400){
-            this.descontoNota = calcularDesconto();
-            this.totalNotaSemImposto = calcularTotalNotaSemImposto() - this.descontoNota;
-            this.icms = calculaImposto.calcularIcms(this.totalNotaSemImposto);
-            this.ipi = calculaImposto.calcularIpi(this.totalNotaSemImposto);
-            this.pis = calculaImposto.calcularPis(this.totalNotaSemImposto);
-            this.cofins = calculaImposto.calcularCofins(this.totalNotaSemImposto);
-            this.totalNotaComImposto = calcularTotalNotaComImposto();
-        }else {
-            this.totalNotaSemImposto = calcularTotalNotaSemImposto();
-            this.icms = calculaImposto.calcularIcms(this.totalNotaSemImposto);
-            this.ipi = calculaImposto.calcularIpi(this.totalNotaSemImposto);
-            this.pis = calculaImposto.calcularPis(this.totalNotaSemImposto);
-            this.cofins = calculaImposto.calcularCofins(this.totalNotaSemImposto);
-            this.totalNotaComImposto = calcularTotalNotaComImposto();
-        }
+        this.totalNotaSemImposto = calcularTotalNotaSemImposto() - this.descontoNota;
+        this.icms = calculaImposto.calcularIcms(this.totalNotaSemImposto);
+        this.ipi = calculaImposto.calcularIpi(this.totalNotaSemImposto);
+        this.pis = calculaImposto.calcularPis(this.totalNotaSemImposto);
+        this.cofins = calculaImposto.calcularCofins(this.totalNotaSemImposto);
+        this.totalNotaComImposto = calcularTotalNotaComImposto();
     }
 
     public Double calcularDesconto(){
