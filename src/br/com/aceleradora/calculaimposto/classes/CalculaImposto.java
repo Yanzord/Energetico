@@ -7,18 +7,18 @@ public class CalculaImposto {
     private Double cofins = 0.0854;
 
     public Double calcularIcms(Double totalNotaSemImposto){
-        return totalNotaSemImposto * this.icms;
+        return totalNotaSemImposto * icms;
     }
 
     public Double calcularIpi(Double totalNotaSemImposto){
-        return totalNotaSemImposto * this.ipi;
+        return totalNotaSemImposto * ipi;
     }
 
     public Double calcularPis(Double totalNotaSemImposto){
-        return totalNotaSemImposto * this.pis;
+        return totalNotaSemImposto * pis;
     }
 
     public Double calcularCofins(Double totalNotaSemImposto){
-        return totalNotaSemImposto * this.cofins;
+        return totalNotaSemImposto * cofins;
     }
 }
