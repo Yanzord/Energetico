@@ -25,7 +25,7 @@ public class AppPrincipal {
             switch (opcaoInserida) {
                 case 1: {
 
-                    System.out.println("\n\nDigite o nome do cliente:");
+                    System.out.println("\nDigite o nome do cliente:");
                     nomeCliente = teclado.next();
 
                     System.out.println("Digite a quantidade de energeticos comprados:");
@@ -34,7 +34,7 @@ public class AppPrincipal {
                     NotaFiscal nota = new NotaFiscal(nomeCliente, qtdEnergetico);
                     relatorios.gerarRelatorio(nota);
 
-                    System.out.println("Nota adicionada com sucesso!\n\n");
+                    System.out.println("Nota adicionada com sucesso!\n");
 
                     break;
                 }
