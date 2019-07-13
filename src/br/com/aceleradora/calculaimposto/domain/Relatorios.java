@@ -1,4 +1,4 @@
-package br.com.aceleradora.calculaimposto.classes;
+package br.com.aceleradora.calculaimposto.domain;
 
 
 import java.util.ArrayList;

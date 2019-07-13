@@ -1,8 +1,8 @@
 package br.com.aceleradora.calculaimposto.app;
 import java.util.Scanner;
 
-import br.com.aceleradora.calculaimposto.classes.NotaFiscal;
-import br.com.aceleradora.calculaimposto.classes.Relatorios;
+import br.com.aceleradora.calculaimposto.domain.NotaFiscal;
+import br.com.aceleradora.calculaimposto.domain.Relatorios;
 
 public class AppPrincipal {
 

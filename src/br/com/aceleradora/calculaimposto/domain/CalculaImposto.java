@@ -1,4 +1,4 @@
-package br.com.aceleradora.calculaimposto.classes;
+package br.com.aceleradora.calculaimposto.domain;
 
 public class CalculaImposto {
     private Double icms = 0.18;
