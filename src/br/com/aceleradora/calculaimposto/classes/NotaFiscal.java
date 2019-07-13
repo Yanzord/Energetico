@@ -11,20 +11,14 @@ public class NotaFiscal {
     private Double totalNotaSemImposto;
     private Double totalNotaComImposto;
     private CalculaImposto calculaImposto;
-    private Double percentualDesconto = 0.15;
     private Double descontoNota = 0.00;
 
     public NotaFiscal (String nomeCliente, int qtdEnergetico){
-        this.calculaImposto = new CalculaImposto();
+        calculaImposto = new CalculaImposto();
         this.nomeCliente = nomeCliente;
         this.qtdEnergetico = qtdEnergetico;
-
-        if (this.qtdEnergetico >= 400){
-            this.descontoNota = calcularDesconto();
-            calcularValoresNota();
-        }else {
-            calcularValoresNota();
-        }
+        descontoNota = calcularDesconto();
+        calcularValoresNota();
     }
 
     public String getNomeCliente() {
@@ -48,7 +42,7 @@ public class NotaFiscal {
     }
 
     public Double getTotalNotaSemImposto() {
-        return totalNotaComImposto;
+        return totalNotaSemImposto;
     }
 
     public Double getTotalNotaComImposto() {
@@ -60,23 +54,27 @@ public class NotaFiscal {
     }
 
     public void calcularValoresNota(){
-        this.totalNotaSemImposto = calcularTotalNotaSemImposto() - this.descontoNota;
-        this.icms = calculaImposto.calcularIcms(this.totalNotaSemImposto);
-        this.ipi = calculaImposto.calcularIpi(this.totalNotaSemImposto);
-        this.pis = calculaImposto.calcularPis(this.totalNotaSemImposto);
-        this.cofins = calculaImposto.calcularCofins(this.totalNotaSemImposto);
-        this.totalNotaComImposto = calcularTotalNotaComImposto();
+        totalNotaSemImposto = calcularTotalNotaSemImposto();
+        icms = calculaImposto.calcularIcms(totalNotaSemImposto);
+        ipi = calculaImposto.calcularIpi(totalNotaSemImposto);
+        pis = calculaImposto.calcularPis(totalNotaSemImposto);
+        cofins = calculaImposto.calcularCofins(totalNotaSemImposto);
+        totalNotaComImposto = calcularTotalNotaComImposto();
     }
 
     public Double calcularDesconto(){
-        return this.qtdEnergetico * this.valorEnergetico * this.percentualDesconto;
+        if (qtdEnergetico >= 400){
+            Double percentualDesconto = 0.15;
+            return qtdEnergetico * valorEnergetico * percentualDesconto;
+        }
+        return 0.00;
     }
 
     public Double calcularTotalNotaSemImposto(){
-        return this.qtdEnergetico * this.valorEnergetico;
+        return (qtdEnergetico * valorEnergetico) - descontoNota;
     }
 
     public Double calcularTotalNotaComImposto() {
-        return this.totalNotaSemImposto + (this.icms + this.ipi + this.pis + this.cofins);
+        return totalNotaSemImposto + (icms + ipi + pis + cofins);
     }
 }
